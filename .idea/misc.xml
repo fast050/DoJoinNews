@@ -5,8 +5,9 @@
       <map>
         <entry key="..\:/Users/Khalid Elfaki/AndroidStudioProjects/DoJoinNews/app/src/main/res/drawable/ic_pick.xml" value="0.1" />
         <entry key="..\:/Users/Khalid Elfaki/AndroidStudioProjects/DoJoinNews/app/src/main/res/layout/activity_main.xml" value="0.21388888888888888" />
+        <entry key="..\:/Users/Khalid Elfaki/AndroidStudioProjects/DoJoinNews/app/src/main/res/layout/fragment_news_detail.xml" value="0.33" />
         <entry key="..\:/Users/Khalid Elfaki/AndroidStudioProjects/DoJoinNews/app/src/main/res/layout/fragment_news_list.xml" value="0.10344827586206896" />
-        <entry key="..\:/Users/Khalid Elfaki/AndroidStudioProjects/DoJoinNews/app/src/main/res/layout/news_list_item.xml" value="0.45412130637636083" />
+        <entry key="..\:/Users/Khalid Elfaki/AndroidStudioProjects/DoJoinNews/app/src/main/res/layout/news_list_item.xml" value="0.37894736842105264" />
         <entry key="..\:/Users/Khalid Elfaki/AndroidStudioProjects/DoJoinNews/app/src/main/res/menu/news_menu.xml" value="0.19444444444444445" />
       </map>
     </option>

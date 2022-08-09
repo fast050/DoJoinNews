@@ -7,20 +7,34 @@
 
         <variable
             name="viewModel"
-            type="com.example.dojoinnews.presentation.ui.new_list.NewsListViewModel" />
+            type="com.example.dojoinnews.presentation.ui.news_list.NewsListViewModel" />
 
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.ui.new_list.NewsListFragment">
+        tools:context=".presentation.ui.news_list.NewsListFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/news_list_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/fragment_news_list"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-    </FrameLayout>
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/fragment_news_list" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/news_list_recycler_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/news_list_recycler_view"
+            app:layout_constraintTop_toTopOf="@+id/news_list_recycler_view" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

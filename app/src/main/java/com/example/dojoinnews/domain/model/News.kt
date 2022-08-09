@@ -1,5 +1,9 @@
 package com.example.dojoinnews.domain.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class News(
     val title: String,
     val image: String,
@@ -8,4 +12,4 @@ data class News(
     val url:String,
     val subject:String,
     val source:String
-)
+): Parcelable

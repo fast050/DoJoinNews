@@ -1,14 +1,13 @@
-package com.example.dojoinnews.presentation.ui.new_list.adapter
+package com.example.dojoinnews.presentation.ui.news_list.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.example.dojoinnews.databinding.NewsListItemBinding
 import com.example.dojoinnews.domain.model.News
 
-class NewsListAdapter : ListAdapter<News, NewsListViewHolder>(Diff) {
+class NewsListAdapter(val listener : (News)->(Unit)) : ListAdapter<News, NewsListViewHolder>(Diff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsListViewHolder {
         val binding = NewsListItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -16,7 +15,9 @@ class NewsListAdapter : ListAdapter<News, NewsListViewHolder>(Diff) {
     }
 
     override fun onBindViewHolder(holder: NewsListViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position),listener)
+
+
     }
 
 

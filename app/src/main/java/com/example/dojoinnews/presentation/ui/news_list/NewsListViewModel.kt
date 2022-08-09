@@ -1,6 +1,5 @@
-package com.example.dojoinnews.presentation.ui.new_list
+package com.example.dojoinnews.presentation.ui.news_list
 
-import android.util.Log
 import androidx.lifecycle.*
 import com.example.dojoinnews.commen.util.Resources
 import com.example.dojoinnews.domain.model.News

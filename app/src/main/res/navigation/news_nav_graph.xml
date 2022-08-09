@@ -7,7 +7,20 @@
 
     <fragment
         android:id="@+id/newsListFragment"
-        android:name="com.example.dojoinnews.presentation.ui.new_list.NewsListFragment"
+        android:name="com.example.dojoinnews.presentation.ui.news_list.NewsListFragment"
         android:label="Popular News"
-        tools:layout="@layout/fragment_news_list"/>
+        tools:layout="@layout/fragment_news_list">
+        <action
+            android:id="@+id/action_newsListFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="com.example.dojoinnews.presentation.ui.news_details.NewsDetailFragment"
+        android:label="Detailed news"
+        tools:layout="@layout/fragment_news_detail">
+        <argument
+            android:name="News"
+            app:argType="com.example.dojoinnews.domain.model.News" />
+    </fragment>
 </navigation>
