@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data >
+
+        <variable
+            name="viewModel"
+            type="com.example.dojoinnews.presentation.ui.news_details.NewsDetailViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.news_details.NewsDetailFragment">
+
+        <!-- Media -->
+        <ImageView
+            android:id="@+id/news_detail_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:contentDescription="@string/content_description_media"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            imageUrl="@{viewModel.newsDetail.image}"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <!-- Media -->
+
+        <TextView
+            android:id="@+id/news_detail_text_news_by"
+            style="@style/DoJoinNews.Text.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="center"
+            android:text="@{viewModel.newsDetail.title}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/news_detail_image_view" />
+
+
+        <TextView
+            android:id="@+id/course_detail_instructor_text_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@{viewModel.newsDetail.source}"
+            app:layout_constraintEnd_toEndOf="@+id/news_detail_text_news_by"
+            app:layout_constraintStart_toStartOf="@+id/news_detail_text_news_by"
+            app:layout_constraintTop_toBottomOf="@+id/news_detail_text_news_by" />
+
+        <TextView
+            android:id="@+id/course_detail_text_summary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            style="@style/DoJoinNews.Text.subTitle"
+            android:text="@{viewModel.newsDetail.subject}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/course_detail_instructor_text_title" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/course_detail_button_see_more"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/action"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

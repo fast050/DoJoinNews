@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DoJoinNews</string>
+    <string name="content_description_media">image of the news</string>
+    <string name="action">see more</string>
 </resources>
