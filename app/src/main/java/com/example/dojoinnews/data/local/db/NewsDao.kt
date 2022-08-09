@@ -23,5 +23,3 @@ interface NewsDao {
     suspend fun getCacheNews() : List<NewsEntity>
 
 }
-
-class s {}

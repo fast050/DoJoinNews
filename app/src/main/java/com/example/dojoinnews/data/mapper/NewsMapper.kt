@@ -1,14 +1,15 @@
 package com.example.dojoinnews.data.mapper
 
-import com.example.dojoinnews.data.dto.NewsDTO
 import com.example.dojoinnews.data.local.entity.NewsEntity
+import com.example.dojoinnews.data.remote.dto.Result
+import com.example.dojoinnews.data.utils.Constants
 import com.example.dojoinnews.domain.model.News
 
-fun NewsDTO.toNewEntity(): NewsEntity =
+fun Result.toNewEntity(): NewsEntity =
     NewsEntity(
         id = id,
         title = title,
-        image = media.first().mediaMetadata.last().url,
+        image = media?.firstOrNull()?.media_metadata?.lastOrNull()?.url ?: Constants.placeHolderImageUrl,
         newsBy = byline,
         publishedDate = published_date,
         url = url,

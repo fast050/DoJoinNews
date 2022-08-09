@@ -13,7 +13,7 @@ class FakeNewsRepository : NewsRepository {
         isResponseSuccessful = isSuccess
     }
 
-    override fun getNews(period: String): Flow<Resources<List<News>>> = flow{
+    override fun getNews(period: Int): Flow<Resources<List<News>>> = flow{
         if (isResponseSuccessful)
              emit(Resources.Success(data = listOfNews))
         else

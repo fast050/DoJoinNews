@@ -1,8 +1,8 @@
-package com.example.dojoinnews.data.dto
+package com.example.dojoinnews.data.remote.dto
 
 data class NewsResponseDTO(
     val copyright: String,
     val num_results: Int,
-    val results: List<NewsDTO>,
+    val results: List<Result?>?,
     val status: String
 )

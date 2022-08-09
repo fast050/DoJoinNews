@@ -1,4 +1,4 @@
-package com.example.dojoinnews.data.dto
+package com.example.dojoinnews.data.remote.dto
 
 data class MediaMetadata(
     val format: String,

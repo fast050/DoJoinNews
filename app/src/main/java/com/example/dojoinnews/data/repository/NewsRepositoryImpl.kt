@@ -1,8 +1,10 @@
 package com.example.dojoinnews.data.repository
 
 
+import android.util.Log
 import com.example.dojoinnews.commen.util.Resources
 import com.example.dojoinnews.data.local.db.NewsDao
+import com.example.dojoinnews.data.local.entity.NewsEntity
 import com.example.dojoinnews.data.mapper.toNewEntity
 import com.example.dojoinnews.data.mapper.toNews
 import com.example.dojoinnews.data.remote.NewsApiServices
@@ -12,13 +14,14 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import okio.IOException
 import retrofit2.HttpException
+import javax.inject.Inject
 
-class NewsRepositoryImpl(
+class NewsRepositoryImpl @Inject constructor(
     private val apiServices: NewsApiServices,
     private val newsDao: NewsDao
 ) : NewsRepository {
 
-    override fun getNews(period: String): Flow<Resources<List<News>>> = flow {
+    override fun getNews(period: Int): Flow<Resources<List<News>>> = flow {
 
         emit(Resources.Loading())
 
@@ -27,8 +30,10 @@ class NewsRepositoryImpl(
 
         try {
             val remoteNews = apiServices.getNews(period)
+
+            Log.d("TAG", "getNews: $remoteNews")
             newsDao.clearCache()
-            newsDao.insertNews(remoteNews.results.map { it.toNewEntity() })
+            remoteNews.results?.map { it?.toNewEntity() }?.let { newsDao.insertNews(it as List<NewsEntity>) }
 
             val news = newsDao.getCacheNews().map { it.toNews() }
             emit(Resources.Success(news))

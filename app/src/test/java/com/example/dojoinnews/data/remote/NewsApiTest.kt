@@ -50,7 +50,7 @@ class NewsApiTest {
             server.apply {
                 enqueue(MockResponse().setBody(MockResponseFileReader("news_response.json").content))
             }
-            val data = newsApi.getNews("7")
+            val data = newsApi.getNews(7)
             assertThat(data).isNotNull()
         }
 
@@ -59,7 +59,7 @@ class NewsApiTest {
             server.apply {
                 enqueue(MockResponse().setBody(MockResponseFileReader("news_response.json").content))
             }
-            val dataSize = newsApi.getNews("7").results.size
+            val dataSize = newsApi.getNews(7).results?.size
             assertThat(dataSize).isEqualTo(20)
         }
 

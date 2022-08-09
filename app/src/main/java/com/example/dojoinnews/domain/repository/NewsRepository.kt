@@ -5,5 +5,5 @@ import com.example.dojoinnews.domain.model.News
 import kotlinx.coroutines.flow.Flow
 
 interface NewsRepository {
-    fun getNews(period: String): Flow<Resources<List<News>>>
+    fun getNews(period: Int): Flow<Resources<List<News>>>
 }
